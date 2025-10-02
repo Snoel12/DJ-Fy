@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Figtree } from "next/font/google";
 import "./globals.css";
 import { Sidebar } from "@/components/Sidebar";
+import SupabaseProvider from "@/providers/SupabaseProvider";
+import UserProvider from "@/providers/UserProvider";
+import ModalProvider from "@/providers/ModalProvider";
 
 const fig = Figtree({
   subsets: ["latin"],
@@ -20,7 +23,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${fig} } antialiased`}>
-        <Sidebar>{children}</Sidebar>
+        <SupabaseProvider>
+          <UserProvider>
+            <ModalProvider />
+            <Sidebar>{children}</Sidebar>
+          </UserProvider>
+        </SupabaseProvider>
       </body>
     </html>
   );
