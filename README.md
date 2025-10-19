@@ -1,8 +1,12 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
+This project was built with TypeScript, React.js, Next.js, Tailwind CSS Radix UI, Zustand PostgreSQL and Supabase
 
-First, run the development server:
+First obtain a free API keys from supabase.com
+clone the repo
+then run npm install to install all packages
+then run the development server:
 
 ```bash
 npm run dev
