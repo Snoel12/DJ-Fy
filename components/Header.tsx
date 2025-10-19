@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { BiSearch } from "react-icons/bi";
 import { HiHome } from "react-icons/hi";
@@ -72,19 +73,39 @@ const Header = ({ children, className }: HeaderProps) => {
         </div>
         <div className="flex justify-between items-center gap-x-4">
           {user ? (
-            <div className="flex gap-x-4 items-center">
-              <Button onClick={handleLogout} className="bg-white px-6 py-2">
-                Logout
-              </Button>
-              <Button
-                onClick={() => router.push("/account")}
-                className="bg-white"
-              >
-                <FaUserAlt />
-              </Button>
-            </div>
+            <>
+              <div className="relative h-50 w-50 lg:h-24 lg:w-24">
+                <Image
+                  fill
+                  alt="flavor"
+                  className="object-cover"
+                  src="/images/booth.jpg"
+                />
+              </div>
+
+              <div className="flex gap-x-4 items-center">
+                <Button onClick={handleLogout} className="bg-white px-6 py-2">
+                  Logout
+                </Button>
+                <Button
+                  onClick={() => router.push("/account")}
+                  className="bg-white"
+                >
+                  <FaUserAlt />
+                </Button>
+              </div>
+            </>
           ) : (
             <>
+              <div className="relative h-50 w-50 lg:h-24 lg:w-24">
+                <Image
+                  fill
+                  alt="flavor"
+                  className="object-cover"
+                  src="/images/booth.jpg"
+                />
+              </div>
+
               <div>
                 <Button
                   onClick={onOpen}

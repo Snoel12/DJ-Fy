@@ -1,7 +1,7 @@
 "use client";
 
 import useLoadImage from "@/hooks/useLoadImage";
-//import usePlayer from "@/hooks/usePlayer";
+import usePlayer from "@/hooks/usePlayer";
 import { Song } from "@/types";
 import Image from "next/image";
 
@@ -11,7 +11,7 @@ interface MediaItemProps {
 }
 
 const MediaItem = ({ data, onClick }: MediaItemProps) => {
-  //const player = usePlayer();
+  const player = usePlayer();
   const imageUrl = useLoadImage(data);
 
   const handleClick = () => {
@@ -19,7 +19,7 @@ const MediaItem = ({ data, onClick }: MediaItemProps) => {
       return onClick(data.id);
     }
 
-    //return player.setId(data.id);
+    return player.setId(data.id);
   };
   return (
     <div
@@ -43,3 +43,5 @@ const MediaItem = ({ data, onClick }: MediaItemProps) => {
 };
 
 export default MediaItem;
+
+//6:39:22
